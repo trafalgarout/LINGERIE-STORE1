@@ -1,0 +1,132 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.description {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    line-height: 1.6;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .contactGrid {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.infoCard {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.infoCard h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.infoCard p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.formSection {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--border-color);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.input,
+.textarea {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(212, 168, 85, 0.2);
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submitButton {
+    background: var(--gold-gradient);
+    color: #0d0d0d;
+    padding: 1rem 2rem;
+    border: 1px solid var(--accent-gold);
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin-top: 1rem;
+}
+
+.submitButton:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}

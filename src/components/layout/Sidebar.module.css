@@ -1,0 +1,88 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.widget {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.widgetTitle {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--accent-gold);
+}
+
+.searchForm {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.searchInput {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.searchButton {
+    padding: 0.5rem 1rem;
+    background: var(--gold-gradient);
+    color: #0d0d0d;
+    border-radius: 0;
+    font-weight: 600;
+}
+
+.categoryList {
+    list-style: none;
+}
+
+.categoryItem {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.categoryItem:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.categoryLink {
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.categoryLink:hover {
+    color: var(--accent-gold);
+}
+
+.stickyWidget {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+}
+
+.adPlaceholder {
+    background-color: var(--bg-accent);
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    border: 1px dashed var(--border-color);
+}
