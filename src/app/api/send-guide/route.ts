@@ -1,21 +1,20 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
-    try {
-        const { email, result } = await req.json();
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { email, result } = await req.json();
 
-        if (!email || !result) {
-            return NextResponse.json({ error: 'Email and results are required' }, { status: 400 });
-        }
+    if (!email || !result) {
+      return NextResponse.json({ error: 'Email and results are required' }, { status: 400 });
+    }
 
-        const { data, error } = await resend.emails.send({
-            from: 'Lingerie Paradise <guides@lingerieparadise.store>',
-            to: [email],
-            subject: 'Your Personalized Lingerie Fit & Style Guide ✨',
-            html: `
+    const { data, error } = await resend.emails.send({
+      from: 'Lingerie Paradise <guides@lingerieparadise.store>',
+      to: [email],
+      subject: 'Your Personalized Lingerie Fit & Style Guide ✨',
+      html: `
         <div style="font-family: sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
           <h2 style="color: #d4a855; text-align: center;">Your Fit & Style Guide is Here!</h2>
           <p>Hello,</p>
@@ -58,16 +57,16 @@ export async function POST(req: Request) {
           </p>
         </div>
       `,
-        });
+    });
 
-        if (error) {
-            console.error('Resend Error:', error);
-            return NextResponse.json({ error: error.message }, { status: 500 });
-        }
-
-        return NextResponse.json({ success: true, data });
-    } catch (err) {
-        console.error('API Error:', err);
-        return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    if (error) {
+      console.error('Resend Error:', error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
+
+    return NextResponse.json({ success: true, data });
+  } catch (err) {
+    console.error('API Error:', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
 }
