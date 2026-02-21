@@ -20,6 +20,10 @@
     "remark-gfm": "^4.0.1",
     "resend": "^6.9.2"
   },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
