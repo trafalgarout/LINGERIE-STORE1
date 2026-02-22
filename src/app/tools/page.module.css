@@ -1,0 +1,146 @@
+.header {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.toolsList {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.toolCard {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    background: var(--bg-card);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.toolCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gold-gradient);
+    opacity: 0;
+    transition: var(--transition-smooth);
+    z-index: 0;
+}
+
+.toolCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium), var(--shadow-gold);
+    border-color: var(--accent-gold);
+}
+
+.toolIcon {
+    width: 100px;
+    height: 100px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+.toolCard:hover .toolIcon {
+    border-color: var(--accent-gold);
+    box-shadow: var(--glow-gold);
+}
+
+.toolInfo {
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.toolName {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.toolDesc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.toolLink {
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 992px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .toolCard {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .toolIcon {
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+}

@@ -6,7 +6,7 @@ export const DEFAULT_OG_IMAGE = "/og-image.jpg"; // To be added later
 
 export const NAV_LINKS = [
     { name: "Shop", href: "/shop" },
-    { name: "Size Calculator", href: "/tools/bra-size-calculator" },
+    { name: "Expert Tools", href: "/tools" },
     { name: "Luxury & Designer", href: "/luxury-designer" },
     { name: "Bridal", href: "/bridal-wedding" },
     { name: "Shapewear", href: "/shapewear-support" },
@@ -16,6 +16,10 @@ export const NAV_LINKS = [
 
 export const TOOL_LINKS = [
     { name: "Bra Size Calculator", href: "/tools/bra-size-calculator" },
+    { name: "Panty Size Finder", href: "/tools/panty-size-finder" },
+    { name: "Lingerie Style Quiz", href: "/tools/style-quiz" },
+    { name: "Visual Fit Guide", href: "/tools/fit-guide" },
+    { name: "Universal Size Converter", href: "/tools/size-converter" },
 ];
 
 export const COMPANY_LINKS = [

@@ -1,0 +1,170 @@
+.wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-premium);
+    max-width: 800px;
+    margin: 2rem auto;
+    color: var(--text-primary);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.typeToggle {
+    display: flex;
+    justify-content: center;
+    background: var(--bg-primary);
+    padding: 5px;
+    border-radius: 50px;
+    max-width: 300px;
+    margin: 0 auto 40px;
+    border: 1px solid var(--border-color);
+}
+
+.typeBtn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    color: var(--text-secondary);
+}
+
+.typeBtnActive {
+    background: var(--gold-gradient);
+    color: #0d0d0d;
+}
+
+.converterBody {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.inputCard {
+    flex: 1;
+    background: var(--bg-primary);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.cardLabel {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.select:focus {
+    border-color: var(--accent-gold);
+}
+
+.swapBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--bg-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    color: var(--accent-gold);
+}
+
+.swapBtn:hover {
+    transform: rotate(180deg);
+    border-color: var(--accent-gold);
+    background: var(--accent-gold);
+    color: #0d0d0d;
+}
+
+.resultTitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.conversionRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.convBox {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.boxRegion {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.boxValue {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+}
+
+@media (max-width: 600px) {
+    .converterBody {
+        flex-direction: column;
+    }
+
+    .swapBtn {
+        transform: rotate(90deg);
+    }
+
+    .swapBtn:hover {
+        transform: rotate(270deg);
+    }
+
+    .conversionRow {
+        grid-template-columns: 1fr 1fr;
+    }
+}

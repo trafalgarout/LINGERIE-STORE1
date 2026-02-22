@@ -1,0 +1,189 @@
+.wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-premium);
+    max-width: 700px;
+    margin: 2rem auto;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.progressContainer {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-primary);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background: var(--gold-gradient);
+    transition: width 0.4s ease;
+}
+
+.questionSection {
+    flex-grow: 1;
+}
+
+.question {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.optionBtn {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    background: var(--bg-primary);
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+    color: var(--text-secondary);
+}
+
+.optionBtn:hover {
+    border-color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.05);
+    transform: translateX(5px);
+    color: var(--text-primary);
+}
+
+.optionBtnActive {
+    border-color: var(--accent-gold);
+    background: var(--gold-gradient);
+    color: #0d0d0d;
+}
+
+.resultsSection {
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.resultTitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.personaName {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.personaDesc {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.recsContainer {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.recsTitle {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.recsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.recCard {
+    background: var(--bg-primary);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.recType {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.recName {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.resetBtn {
+    margin-top: 50px;
+    background: var(--gold-gradient);
+    color: #0d0d0d;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition-smooth);
+}
+
+.resetBtn:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 600px) {
+    .personaName {
+        font-size: 2.2rem;
+    }
+
+    .recsList {
+        grid-template-columns: 1fr;
+    }
+}
