@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import AdSenseUnit from '@/components/ads/AdSenseUnit';
 import styles from './page.module.css';
 
@@ -245,6 +244,18 @@ const adSlots = [
     { slot: "2428626901", format: "auto" as const },
 ];
 
+// Vibrant, feminine gradients for the text thumbnails
+const girlyGradients = [
+    "linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)", // Rose to Pale Pink
+    "linear-gradient(120deg, #f093fb 0%, #f5576c 100%)",             // Bright Magenta to Pink
+    "linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%)",             // Lavender to Soft Blue
+    "linear-gradient(to top, #ff0844 0%, #ffb199 100%)",             // Strawberry Red to Peach
+    "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",             // Mint to Aqua
+    "linear-gradient(to right, #fa709a 0%, #fee140 100%)",           // Hot Pink to Sun Yellow
+    "linear-gradient(to top, #c471f5 0%, #fa71cd 100%)",             // Purple to Fuschia
+    "linear-gradient(120deg, #f6d365 0%, #fda085 100%)",             // Warm Peach to Orange
+];
+
 export default function ShopPage() {
     return (
         <div className={styles.container}>
@@ -272,33 +283,37 @@ export default function ShopPage() {
                             </div>
 
                             <div className={styles.productsGrid}>
-                                {category.products.map((product) => (
-                                    <div key={product.title} className={styles.productCard}>
-                                        <div className={styles.productImageWrap}>
-                                            <Image
-                                                src={product.image}
-                                                alt={product.title}
-                                                fill
-                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
-                                                className={styles.productImage}
-                                            />
-                                        </div>
-                                        <div className={styles.productInfo}>
-                                            <h3 className={styles.productTitle}>{product.title}</h3>
-                                            <p className={styles.productDescription}>{product.description}</p>
-                                            <div className={styles.productBtnWrap}>
-                                                <a
-                                                    href={product.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer nofollow"
-                                                    className={styles.productBtn}
+                                {category.products.map((product, prodIndex) => {
+                                    const gradientIndex = (catIndex * category.products.length + prodIndex) % girlyGradients.length;
+                                    const thumbnailGradient = girlyGradients[gradientIndex];
+
+                                    return (
+                                        <div key={product.title} className={styles.productCard}>
+                                            <div className={styles.productImageWrap}>
+                                                <div
+                                                    className={styles.productThumbnail}
+                                                    style={{ background: thumbnailGradient }}
                                                 >
-                                                    Shop Now
-                                                </a>
+                                                    <span className={styles.thumbnailText}>{product.title}</span>
+                                                </div>
+                                            </div>
+                                            <div className={styles.productInfo}>
+                                                <h3 className={styles.productTitle}>{product.title}</h3>
+                                                <p className={styles.productDescription}>{product.description}</p>
+                                                <div className={styles.productBtnWrap}>
+                                                    <a
+                                                        href={product.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer nofollow"
+                                                        className={styles.productBtn}
+                                                    >
+                                                        Shop Now
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </section>
 

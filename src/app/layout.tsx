@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CookieBanner from "@/components/ui/CookieBanner";
 import SmoothScrollProvider from "@/components/animations/SmoothScrollProvider";
 
 export default function RootLayout({
@@ -45,6 +46,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <CookieBanner />
         </SmoothScrollProvider>
       </body>
     </html>

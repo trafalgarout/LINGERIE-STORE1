@@ -96,8 +96,8 @@ export default function HeroSection() {
                     </motion.p>
 
                     <motion.div variants={itemVariants} className={styles.ctaContainer}>
-                        <Link href="/shop" className={`${styles.glowBtn} btn`}>
-                            Shop Collection
+                        <Link href="/tools" className={`${styles.glowBtn} btn`}>
+                            Explore Expert Tools
                         </Link>
                     </motion.div>
                 </motion.div>

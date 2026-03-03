@@ -5,7 +5,6 @@ export const SITE_DESCRIPTION = "Your ultimate guide to luxury lingerie, bridal 
 export const DEFAULT_OG_IMAGE = "/og-image.jpg"; // To be added later
 
 export const NAV_LINKS = [
-    { name: "Shop", href: "/shop" },
     { name: "Expert Tools", href: "/tools" },
     { name: "Luxury & Designer", href: "/luxury-designer" },
     { name: "Bridal", href: "/bridal-wedding" },

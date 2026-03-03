@@ -11,15 +11,6 @@ const recentArticles = [
 export default function Sidebar() {
     return (
         <div className={styles.sidebar}>
-            <div className={styles.widget}>
-                <h3 className={styles.widgetTitle}>Featured Collection</h3>
-                <div className={styles.featuredBox}>
-                    <p className={styles.featuredText}>Discover the latest in luxury lace and designer sets.</p>
-                    <Link href="/shop" className="btn btn-primary" style={{ width: '100%', padding: '0.6rem' }}>
-                        Shop Collection
-                    </Link>
-                </div>
-            </div>
 
             <div className={styles.widget}>
                 <h3 className={styles.widgetTitle}>Recent Guides</h3>
